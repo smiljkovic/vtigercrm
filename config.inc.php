@@ -32,7 +32,7 @@ $USE_RTE = 'true';
 
 // helpdesk support email id and support name (Example: 'support@vtiger.com' and 'vtiger support')
 $HELPDESK_SUPPORT_EMAIL_ID = 'Nikola.Smiljkovic@gmail.com';
-$HELPDESK_SUPPORT_NAME = 'your-support name';
+$HELPDESK_SUPPORT_NAME = 'Support Name';
 $HELPDESK_SUPPORT_EMAIL_REPLY_ID = $HELPDESK_SUPPORT_EMAIL_ID;
 
 /* database configuration
@@ -159,7 +159,7 @@ $disable_stats_tracking = false;
 $application_unique_key = '9030c01e97bdd300c563ece2175f4022';
 
 // trim descriptions, titles in listviews to this value
-$listview_max_textlength = 40;
+$listview_max_textlength = '40';
 
 // Maximum time limit for PHP script execution (in seconds)
 $php_max_execution_time = 0;
