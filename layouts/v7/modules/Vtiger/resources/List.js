@@ -2437,7 +2437,7 @@ Vtiger.Class("Vtiger_List_Js", {
 				//add available field to selected list
 				availFieldsList.on('click', '.item', function (e) {
 					var selectedFieldsEles = selectedFieldsList.find('.item');
-					var limit = jQuery('#maxListFieldsSelectionSize').text();
+					var limit = 10; // jQuery('#maxListFieldsSelectionSize').text();
 					if (selectedFieldsEles.length > limit) {
 						app.helper.showErrorNotification({message: app.vtranslate('JS_YOU_CAN_SELECT_ONLY')+' '+limit+' '+app.vtranslate('JS_ITEMS')});
 						return false;
