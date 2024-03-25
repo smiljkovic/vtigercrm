@@ -122,13 +122,26 @@ class CustomerPortal_FetchRecords extends CustomerPortal_API_Abstract {
 				}
 				if ($mode == 'mine') {
 					$relatedId = $contactWebserviceId;
-					$countResult = vtws_query_related($countSql, $relatedId, $moduleLabel, $current_user);
+					//NOTE - Nikola
+					if ($moduleLabel == 'Subscriptions'){
+						$limitClause = sprintf("AND subscriptionstatus IN ('%s')", "Active");
+						$countResult = vtws_query_related($countSql, $relatedId, $moduleLabel, $current_user, $limitClause);
+					}else{
+						$countResult = vtws_query_related($countSql, $relatedId, $moduleLabel, $current_user);
+					}
 					$count = $countResult[0]['count'];
 
-					$limitClause = sprintf('ORDER BY %s %s LIMIT %s,%s', $orderBy, $order, ($page * $pageLimit), $pageLimit);
-					$result = vtws_query_related($sql, $relatedId, $moduleLabel, $current_user, $limitClause);
+				 	//FIXME - Nikola
+					if ($moduleLabel == 'Subscriptions'){
+						$limitClause = sprintf("AND subscriptionstatus IN ('%s')", "Active");
+						$result = vtws_query_related($sql, $relatedId, $moduleLabel, $current_user, $limitClause);
+
+					}else { 
+						$limitClause = sprintf('ORDER BY %s %s LIMIT %s,%s', $orderBy, $order, ($page * $pageLimit), $pageLimit);
+						$result = vtws_query_related($sql, $relatedId, $moduleLabel, $current_user, $limitClause);
+					}
 				} else if ($mode == 'all') {
-					if (in_array($module, array('Products', 'Services'))) {
+					if (in_array($module, array('Products', 'Services','Locations','Chargers' ))) { //Nikola Added Locations, Chargers
 						$countSql = sprintf('SELECT count(*) FROM %s;', $module);
 						$sql = sprintf('SELECT %s FROM %s', $fields, $module);
 						$limitClause = sprintf('ORDER BY %s %s LIMIT %s,%s;', $orderBy, $order, ($page * $pageLimit), $pageLimit);

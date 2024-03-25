@@ -401,3 +401,229 @@ select.form-control option{
     filter: alpha(opacity=90);
     opacity: 0.9;
 }
+
+/* Nikola styles */
+
+.pt-inner {
+    text-align: center;
+    
+}
+
+.tile {
+    background-color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tile {
+    /* box-shadow: 0 1px 1px rgba(0, 0, 0, .07); */
+    
+    border-radius: 7px 7px 7px 7px;
+    /* VIA CSS MATIC https://goo.gl/cIbnS */
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.pt-inner .pti-heading {
+    padding: 5%;
+    color: #000;
+    position: relative;
+    background-color: #eee !important;
+}
+
+.pt-inner .pti-header {
+    padding: 30px 10px 70px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.bg-color1 {
+    background-color: #ffc107 !important;
+}
+
+.bg-color2 {
+    background-color: #4caf50 !important;
+}
+
+.bg-color3 {
+    background-color: #00bcd4 !important;
+}
+
+.bg-color4 {
+    background-color: #FF0000 !important;
+}
+
+
+
+.pt-inner .pti-heading>h2 {
+    margin: 0;
+    line-height: 100%;
+    color: #000;
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.pt-inner .pti-heading>p {
+    color: #000;
+    font-size: 14px;
+    padding: 15px 0;
+    font-weight: 400;
+}
+
+/* .pt-inner .ptib-item>h2 {
+    margin: 0;
+    line-height: 100%;
+    color: #000;
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.pt-inner .ptib-item>h2 small {
+    color: #000;
+    letter-spacing: 0;
+    vertical-align: top;
+    font-size: 20px;
+    font-weight: 100;
+} */
+
+.pt-inner .pti-header .ptih-title {
+    background-color: rgba(0, 0, 0, .1);
+    padding: 8px 10px 9px;
+    margin: 0 -10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.pt-inner .pti-header .ptih-title {
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.pt-inner .pti-body {
+    padding: 0 23px;
+}
+
+.pt-inner .pti-body .ptib-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.pt-inner .pti-body .ptib-item {
+    padding: 10px 0;
+    font-weight: 400;
+}
+
+.pt-inner .pti-body .ptib-item>h2 {
+    font-size: 50px;
+    margin: 0;
+    line-height: 100%;
+    color: #000;
+    font-weight: 100;
+    
+}
+.pt-inner .pti-body .ptib-item>h2 small{
+    color: #000;
+    letter-spacing: 0;
+    vertical-align: top;
+    font-size: 28px;
+    font-weight: 100;
+    
+}
+
+.pt-inner .pti-footer {
+    padding: 10px 10px 10px;
+}
+
+.pt-inner .pti-footer>a {
+    width: 70%;
+    height: 40px;
+    border-radius: 7px;
+    color: #fff;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+.card-container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 40px;
+    position: relative;
+    /* box-sizing: border-box; */
+    /* border: 1px solid #ccc; */
+    margin: 0 auto 0px auto;
+  }
+  .card-container input {
+    width: 100%;
+    letter-spacing: 1px;
+    /* font-size: 30px; */
+    padding: 10px 10px 10px 15px;
+   /*  border: 0;
+    outline: none; */
+    /* box-sizing: border-box; */
+  }
+
+.card-type {
+    width: 40px;
+    height: 28px;
+    background: url("../resources/images/cards.png");
+    background-position: 0 -147px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+  }
+  .card-type.mastercard {
+    background-position: 0 0;
+  }
+  .card-type.visa {
+    background-position: 0 -58px;
+  }
+  .card-type.amex {
+    background-position: 0 -28px;
+  }
+  .card-type.discover {
+    background-position: 0 -87px;
+  }
+  .card-valid {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    /*line-height: 60px;*/
+    font-size: 20px; 
+    /*font-family: 'icons'; */
+    color: #ccc;
+  }
+  .card-valid.active {
+    color: #5cb85c; 
+  }
+  .card-details {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    transition: 300ms ease;
+  }
+  .card-details input {
+    font-size: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .card-details input.error {
+    border: 1px solid #c2313c;
+    box-shadow: 0 4px 8px 0 rgba(238,76,87,0.3);
+    outline: none;
+  }
+  .card-details .expiration {
+    width: 50%;
+    float: left;
+    padding-right: 5%;
+  }
+  .card-details .cvv {
+    width: 45%;
+    float: left;
+  }

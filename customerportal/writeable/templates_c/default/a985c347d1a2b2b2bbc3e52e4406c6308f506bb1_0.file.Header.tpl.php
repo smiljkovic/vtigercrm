@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-03-19 15:47:41
+/* Smarty version 3.1.39, created on 2024-03-21 14:38:44
   from '/var/www/vtigercrm/customerportal/layouts/default/templates/Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_65f9a58d3e13d2_52502722',
+  'unifunc' => 'content_65fc38640ad767_15300256',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a985c347d1a2b2b2bbc3e52e4406c6308f506bb1' => 
     array (
       0 => '/var/www/vtigercrm/customerportal/layouts/default/templates/Header.tpl',
-      1 => 1693558915,
+      1 => 1711027403,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65f9a58d3e13d2_52502722 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65fc38640ad767_15300256 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!doctype>
 <html ng-app="portalapp">
@@ -39,6 +39,7 @@ function content_65f9a58d3e13d2_52502722 (Smarty_Internal_Template $_smarty_tpl)
 		<link rel="stylesheet" href="layouts/<?php echo portal_layout();?>
 /skins/default/styles.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="libraries/angularjsaddons/angular-xeditable/css/xeditable.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<?php echo '<script'; ?>
  type="text/javascript" src="libraries/jquery/jquery.min.js"><?php echo '</script'; ?>
 >

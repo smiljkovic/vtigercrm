@@ -35,6 +35,9 @@ abstract class Vtiger_Connector {
 	abstract public function fetchHistory($module, $id, $pageNo, $pageLimit, $parentId);
 
 	abstract public function downloadFile($module, $id, $parentId, $parentModule, $attachmentId);
+	//NOTE -  Nikola added below 2 methods
+	abstract public function getMeta($recordId, $module, $parentId, $parentModule);
+	abstract public function deleteRecord($module, $record);
 
 	abstract public function changePassword($record);
 

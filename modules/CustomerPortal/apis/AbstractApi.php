@@ -112,7 +112,7 @@ abstract class CustomerPortal_API_Abstract {
 			if ($mode == 'mine') {
 				$parentId = $contactWebserviceId;
 			} else {
-				if (in_array($module, array('Products', 'Services'))) {
+				if (in_array($module, array('Products', 'Services','Locations','Chargers'))) { //Nikola Added Locations, Chargers
 					$relatedIds = CustomerPortal_Utils::getAllRecordIds($module, $this->getActiveUser());
 					return $relatedIds;
 				} else {
@@ -145,7 +145,7 @@ abstract class CustomerPortal_API_Abstract {
 		}
 		$mode = CustomerPortal_Settings_Utils::getDefaultMode($module);
 		$relatedIds = $this->relatedRecordIds($module, $moduleLabel);
-		if (in_array($recordId, $relatedIds) || ($mode == 'all' && in_array($module, array('Products', 'Services')))) {
+		if (in_array($recordId, $relatedIds) || ($mode == 'all' && in_array($module, array('Products', 'Services','Locations','Chargers')))) { //Nikola Added Locations, Chargers
 			return true;
 		} else {
 			return false;

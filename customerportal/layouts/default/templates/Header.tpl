@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="layouts/{portal_layout()}/resources/application.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="layouts/{portal_layout()}/skins/default/styles.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="libraries/angularjsaddons/angular-xeditable/css/xeditable.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="libraries/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="libraries/jqueryaddons/purl.js"></script>

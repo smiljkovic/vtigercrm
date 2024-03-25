@@ -37,7 +37,9 @@ class CustomerPortal_SaveRecord extends CustomerPortal_FetchRecord {
 
 
 
-			if (in_array($module, array('HelpDesk', 'Documents', 'Assets', 'Quotes', 'Contacts', 'Accounts'))) {
+			//if (in_array($module, array('HelpDesk', 'Documents', 'Assets', 'Quotes', 'Contacts', 'Accounts'))) {
+			//Nikola added 'Billing' module 
+			if (in_array($module, array('HelpDesk', 'Documents', 'Assets', 'Quotes', 'Contacts','Billing', 'Accounts'))) {	
 				$recordId = $request->get('recordId');
 				if (!empty($recordId)) {
 					//Stop edit record if edit is disabled
@@ -114,6 +116,18 @@ class CustomerPortal_SaveRecord extends CustomerPortal_FetchRecord {
 							if (!empty($accountId))
 								$this->recordValues['parent_id'] = $accountId;
 						}
+
+						// Nikola set contact , Organization for Helpdesk record
+						if ($module == 'Billing') {
+							$contactId = vtws_getWebserviceEntityId('Contacts', $this->getActiveCustomer()->id);
+							$this->recordValues['contact_id'] = $contactId;
+							$this->recordValues['from_portal'] = true;
+							$accountId = $this->getParent($contactId);
+							if (!empty($accountId))
+								$this->recordValues['parent_id'] = $accountId;
+						}
+	
+
 
 						if ($module == 'Documents' && php7_count($_FILES)) {
 							$file = $_FILES['file'];

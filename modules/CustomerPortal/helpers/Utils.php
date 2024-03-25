@@ -269,7 +269,17 @@ class CustomerPortal_Utils {
 		$editPermission = $db->query_result($editPermissionResult, 0, 'editrecord');
 		return $editPermission;
 	}
-
+	/*NOTE - Nikola - add delete via customerportal */
+	static function isModuleRecordDeletable($module) {
+		global $db;
+		$db = PearDatabase::getInstance();
+		/*NOTE - there is no deleterecord in vtiger_customerportal_tabs so we will use createrecord field. 
+		Assumption is that if we allow creation by the end user, we should allow deletion, too (maybe this is not ok for HelpDesk module) */
+		$recordPermissionQuery = "SELECT createrecord from vtiger_customerportal_tabs WHERE tabid=?";
+		$createPermissionResult = $db->pquery($recordPermissionQuery, array(getTabid($module)));
+		$createPermission = $db->query_result($createPermissionResult, 0, 'createrecord');
+		return $createPermission;
+	}
 	//Function to get all Ids when mode is set to published.
 
 	static function getAllRecordIds($module, $current_user) {

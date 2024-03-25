@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	min-width: 600px;
+	min-width: 300px; /*Nikola it was 600px */
 	font-size: 14px;
 	width: 100%;
 	overflow-x: hidden;

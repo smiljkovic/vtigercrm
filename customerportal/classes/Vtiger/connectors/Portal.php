@@ -85,7 +85,7 @@ class Vtiger_Portal_Connector extends Vtiger_PortalBase_Connector {
 				Portal_Session::set('portal_auth', $this->auth);
 				Portal_Session::set('contact_id', $response['contact_id']['value']);
 				Portal_Session::set('parent_id', $response['account_id']['value']);
-				Portal_Session::set('parent_idLabel', $response['sccount_id']['label']);
+				Portal_Session::set('parent_idLabel', $response['account_id']['label']);
 				Portal_Session::set('assigned_user_id', $response['user_id']['value']);
 			}
 		} else {
@@ -221,6 +221,27 @@ class Vtiger_Portal_Connector extends Vtiger_PortalBase_Connector {
 		return $response;
 	}
 
+	public function deleteRecord($module, $recordId = false) {
+		$username = Portal_Session::get('username');
+		$password = Portal_Session::get('password');
+		$this->auth = array('Authorization' => 'Basic '.base64_encode($username.':'.$password));
+
+		$params = array(
+			'_operation' => 'DeleteRecord',
+			'module' => $module,
+			'username' => $username,
+			'password' => $password
+		);
+
+		if ($recordId) {
+			$params['recordId'] = $recordId;
+		}
+
+		$response = self::api($params);
+		
+		return $response;
+	}
+
 	public function addComment($values, $parentId) {
 		$username = Portal_Session::get('username');
 		$password = Portal_Session::get('password');
@@ -255,7 +276,29 @@ class Vtiger_Portal_Connector extends Vtiger_PortalBase_Connector {
 		);
 
 		return self::api($params);
+		
 	}
+
+	public function getMeta($recordId, $module, $parentId = false, $parentModule = false) {
+		$username = Portal_Session::get('username');
+		$password = Portal_Session::get('password');
+		$this->auth = array('Authorization' => 'Basic '.base64_encode($username.':'.$password));
+
+		$params = array(
+			'_operation' => 'GetMeta',
+			'module' => $module,
+			'moduleLabel' => $module,
+			'recordId' => $recordId,
+			'parentId' => $parentId,
+			'parentModule' => $parentModule,
+			'username' => $username,
+			'password' => $password
+		);
+
+		return self::api($params);
+	}
+
+
 
 	public function changePassword($record) {
 		$username = Portal_Session::get('username');

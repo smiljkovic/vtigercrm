@@ -49,7 +49,7 @@ class CustomerPortal_FetchRelatedRecords extends CustomerPortal_API_Abstract {
 					exit;
 				}
 			} else if ($parentModule !== 'Faq') {
-				if (!$this->isRecordAccessible($recordId) && $prentModule !== 'Faq') {
+				if (!$this->isRecordAccessible($recordId) && $parentModule !== 'Faq') {
 					throw new Exception("Record not accessible", 1412);
 					exit;
 				}
@@ -115,7 +115,7 @@ class CustomerPortal_FetchRelatedRecords extends CustomerPortal_API_Abstract {
 				$activeFields = CustomerPortal_Utils::getActiveFields($module);
 				$fields = implode(',', $activeFields);
 				$limitCaluse = sprintf('ORDER BY modifiedtime DESC LIMIT %s,%s', ($page * $pageLimit), $pageLimit);
-				if ($mode == 'all' && in_array($module, array('Products', 'Services'))) {
+				if ($mode == 'all' && in_array($module, array('Products', 'Services','Locations'))) { //Nikola Added Locations
 					$sql = sprintf("SELECT %s FROM %s", $fields, $module);
 					$sql = $sql.' '.$limitCaluse;
 					$result = vtws_query($sql, $current_user);

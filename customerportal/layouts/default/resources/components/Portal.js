@@ -13,7 +13,7 @@ function Portal_IndexView_Component($scope, $api, $webapp, sharedModalService, $
 	$scope.pageInitialized = false;
 
 	$scope.searchQ = {
-		onlymine: true
+		onlymine: false
 	}
 	$scope.pageNo = 0;
 	$scope.headers = null;
@@ -27,7 +27,7 @@ function Portal_IndexView_Component($scope, $api, $webapp, sharedModalService, $
 	$scope.exportEnabled = false;
 	var availableModules = JSON.parse(localStorage.getItem('modules'));
 	var currentModule = $scope.module;
-	var allowedModules = ['HelpDesk', 'Documents'];
+	var allowedModules = ['HelpDesk', 'Documents', 'Billing'];
 	if (currentModule !== undefined) {
 		var ptitleLabel = availableModules[ currentModule ].uiLabel;
 		$scope.ptitle = ptitleLabel;
@@ -93,6 +93,28 @@ function Portal_IndexView_Component($scope, $api, $webapp, sharedModalService, $
 			$scope.records = result.records;
 			$scope.edits = result.editLabels;
 			$scope.totalPages = result.count;
+			// Nikola - add meta information to Product record
+			// THIS NEEDS TO BE OPTIMIZED!!!
+			if ($scope.module === 'Products' && result.count > 0) {
+				
+				angular.forEach($scope.records, function (record, key) {
+					
+					$api.get($scope.module+'/GetMeta', {
+						recordId: record.id,
+						module: $scope.module
+					
+					}).success(function (result) {
+						$webapp.busy(false);
+						$scope.pageInitialized = true;
+			
+						record['url']='../'+result.image_details.url;
+						record['color']=result.color;
+
+					});
+				});
+
+			}
+
 		});
 	}
 
