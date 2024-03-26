@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-05 22:13:18
+/* Smarty version 4.5.1, created on 2024-03-25 18:43:19
   from '/var/www/vtigercrm/layouts/v7/modules/Vtiger/AddTagUI.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.3.4',
-  'unifunc' => 'content_65e798fe8121a4_22109036',
+  'version' => '4.5.1',
+  'unifunc' => 'content_6601c5c780f7c8_96932452',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2318d0932eb377b135e89012f69fed3b65f5dddd' => 
     array (
       0 => '/var/www/vtigercrm/layouts/v7/modules/Vtiger/AddTagUI.tpl',
-      1 => 1706189738,
+      1 => 1711392074,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e798fe8121a4_22109036 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6601c5c780f7c8_96932452 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="showAllTagContainer hide"><div class="modal-dialog modal-lg"><div class="modal-content"><form class="detailShowAllModal"><?php ob_start();
 echo vtranslate('LBL_ADD_OR_SELECT_TAG',$_smarty_tpl->tpl_vars['MODULE']->value,$_smarty_tpl->tpl_vars['RECORD_NAME']->value);
-$_prefixVariable9=ob_get_clean();
-$_smarty_tpl->_assignInScope('TITLE', $_prefixVariable9);
+$_prefixVariable6=ob_get_clean();
+$_smarty_tpl->_assignInScope('TITLE', $_prefixVariable6);
 $_smarty_tpl->_subTemplateRender(vtemplate_path("ModalHeader.tpl",$_smarty_tpl->tpl_vars['MODULE']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?><div class="modal-body"><div class="row"><div class="col-lg-6 selectTagContainer"><div class="form-group"><label class="control-label"><?php echo vtranslate('LBL_CURRENT_TAGS',$_smarty_tpl->tpl_vars['MODULE']->value);?>
 </label><div class="currentTagScroll"><div class="currentTag multiLevelTagList form-control"><span class="noTagsPlaceHolder" style="padding:3px;display:none;border:1px solid transparent;color:#999"><?php echo vtranslate('LBL_NO_TAG_EXISTS',$_smarty_tpl->tpl_vars['MODULE']->value);?>

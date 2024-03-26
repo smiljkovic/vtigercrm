@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-05 22:13:18
+/* Smarty version 4.5.1, created on 2024-03-25 18:43:19
   from '/var/www/vtigercrm/layouts/v7/modules/Vtiger/Pagination.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.3.4',
-  'unifunc' => 'content_65e798fe930388_28011319',
+  'version' => '4.5.1',
+  'unifunc' => 'content_6601c5c7998656_26714943',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2565681a1840ec3b5c624bf05f11101606107ed1' => 
     array (
       0 => '/var/www/vtigercrm/layouts/v7/modules/Vtiger/Pagination.tpl',
-      1 => 1706189738,
+      1 => 1711392074,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e798fe930388_28011319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6601c5c7998656_26714943 (Smarty_Internal_Template $_smarty_tpl) {
 if (!$_smarty_tpl->tpl_vars['CLASS_VIEW_ACTION']->value) {?>
     <?php $_smarty_tpl->_assignInScope('CLASS_VIEW_ACTION', 'listViewActions');?>
     <?php $_smarty_tpl->_assignInScope('CLASS_VIEW_PAGING_INPUT', 'listViewPagingInput');?>

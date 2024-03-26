@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2024-03-05 22:12:43
+/* Smarty version 4.5.1, created on 2024-03-25 18:43:19
   from '/var/www/vtigercrm/layouts/v7/modules/Vtiger/partials/SidebarAppMenu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.3.4',
-  'unifunc' => 'content_65e798db999030_61638396',
+  'version' => '4.5.1',
+  'unifunc' => 'content_6601c5c76e97f4_14876301',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd33843709d180bb7dec181281cf134f796e21b80' => 
     array (
       0 => '/var/www/vtigercrm/layouts/v7/modules/Vtiger/partials/SidebarAppMenu.tpl',
-      1 => 1706189738,
+      1 => 1711392074,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_65e798db999030_61638396 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6601c5c76e97f4_14876301 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="app-menu hide" id="app-menu">
 	<div class="container-fluid">
